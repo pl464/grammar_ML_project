@@ -20,7 +20,7 @@ The output of 0 means the model thinks the sentence should use the word "their".
 
 ## Files
 The two notebooks contain the code I used for the data prep and model training. References can be found in `Model_Training.ipynb`. 
-The `Vantage_Labs_Project_Files` folder contains the data. `their_there_theyre_train.csv` etc. contains all the matches of "their/there/theyre" from the GloWbE corpus, while `train.csv` etc. contain the actual files used for training/evaluation.
+The `project_files` folder contains the data. `their_there_theyre_train.csv` etc. contains all the matches of "their/there/theyre" from the GloWbE corpus, while `train.csv` etc. contain the actual files used for training/evaluation.
 
 ## Data
 All the examples come from the first half of the US portion of the GloWbE (Global Web-based English) corpus https://www.english-corpora.org/glowbe/, which I have used in my research work; I make the simplifying assumption that all sentences are grammatical. I extracted single sentences containing a single use of "their/there/they're", ultimately sampling 10k examples for each word (total of 30k examples). The labels were assigned at this point (0, 1, and 2 for "their", "there", and "they're", respectively). 
