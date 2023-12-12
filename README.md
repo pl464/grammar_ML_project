@@ -6,6 +6,7 @@ This was a very interesting problem in that I could see multiple ways to tackle 
 However, the way I ultimately chose to approach it was as a 3-way text classification task, where an input sentence is mapped to a 0, 1, or 2, representing which of "their", "there", and "they're" (respectively) should be used in that input sentence. This may seem unnatural given that the input already contains some usage of "their", "there", or "they're" (grammatical or not), but this way, the output label can tell you two things at once:
 
 (1) if it doesn't match the "their/there/they're" word in the example, then the model is suggesting this example is ungrammatical, and 
+
 (2) it makes a suggestion.
 
 Additionally, keeping it as one task made evaluation simpler. Here are some examples of how the model could be interpreted:
