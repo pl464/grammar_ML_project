@@ -6,6 +6,7 @@ This was a very interesting problem in that I could see multiple ways to tackle 
 However, the way I ultimately chose to approach it was as a 3-way text classification task, where an input sentence is mapped to a 0, 1, or 2, representing which of "their", "there", and "they're" (respectively) should be used in that input sentence. This may seem unnatural given that the input already contains some usage of "their", "there", or "they're" (grammatical or not), but this way, the output label can tell you two things at once:
 
 (1) if it doesn't match the "their/there/they're" word in the example, then the model is suggesting this example is ungrammatical, and 
+
 (2) it makes a suggestion.
 
 Additionally, keeping it as one task made evaluation simpler. Here are some examples of how the model could be interpreted:
@@ -20,7 +21,7 @@ The output of 0 means the model thinks the sentence should use the word "their".
 
 ## Files
 The two notebooks contain the code I used for the data prep and model training. References can be found in `Model_Training.ipynb`. 
-The `Vantage_Labs_Project_Files` folder contains the data. `their_there_theyre_train.csv` etc. contains all the matches of "their/there/theyre" from the GloWbE corpus, while `train.csv` etc. contain the actual files used for training/evaluation.
+The `project_files` folder contains the data. `their_there_theyre_train.csv` etc. contains all the matches of "their/there/theyre" from the GloWbE corpus, while `train.csv` etc. contain the actual files used for training/evaluation.
 
 ## Data
 All the examples come from the first half of the US portion of the GloWbE (Global Web-based English) corpus https://www.english-corpora.org/glowbe/, which I have used in my research work; I make the simplifying assumption that all sentences are grammatical. I extracted single sentences containing a single use of "their/there/they're", ultimately sampling 10k examples for each word (total of 30k examples). The labels were assigned at this point (0, 1, and 2 for "their", "there", and "they're", respectively). 
